@@ -1,25 +1,34 @@
 "use strict";
 class Vehicle {
-    constructor(model, yearproduction, fueltype) {
+    constructor(model, yearproduction, fueltype, price, numberofseats, image) {
         this.model = model;
         this.yearproduction = yearproduction;
         this.fueltype = fueltype;
-    }
-    displayInfo() {
-        return `The Vehicle model ${this.model} whic is produced in ${this.yearproduction} , has a fueltype ${this.fueltype}`;
-    }
-}
-// let person = new Vehicle("Hasan", 27, "engineer");
-// (document.getElementById("result") as HTMLElement).innerHTML += person.displayInfo();
-class Info extends Vehicle {
-    constructor(model, yearproduction, fueltype, price, numberofseats) {
-        super(model, yearproduction, fueltype);
-        this.price = price;
         this.numberofseats = numberofseats;
+        this.price = price;
+        this.image = image;
     }
     displayInfo() {
-        return `and I get ${this.price}€ every month, and I work in ${this.numberofseats}.`;
+        return `<div class = "col"><div class="card" style="width: 18rem;">
+  <img src="${this.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h3 class="card-title">Model: ${this.model}</h3>
+    <h5 class="card-title">Productionyear${this.yearproduction}</h5>
+    <p class="card-text">Fueltype: ${this.fueltype}</p>
+    <p class="card-text">Number of Seats: ${this.numberofseats}</p>
+    <h4 class="card-title">Productionyear${this.price}</h4>
+    </div>
+  </div>
+</div>`;
     }
 }
-// let person1 = new Info("Hasan", 27, "engineer", 3600, "Vienna");
-// (document.getElementById("result") as HTMLElement).innerHTML += person1.displayInfo();
+const cars = [];
+new Place("Hamburg", "It is a nice city", "hamburg.png");
+new Place("Nantes", "It is also nice", "nantes.jpeg");
+new Place("Stockholm", "It is a nice city", "stockholm.jpeg");
+new Place("Vitoria-Gasteiz", "It is also nice", "vitoria.jpg");
+new Theater("Sydney", "Landmark, skyline-dominating arts centre for opera, theatre, music and dance, plus guided tours.", "https://cdn.pixabay.com/photo/2014/06/06/09/36/sydney-opera-house-363244_1280.jpg", "Sydney Opera House", "+61292507111");
+new Theater("Buenos Aires", "This grand theater (circa 1908) known for acoustics hosts classical music, operas, ballets & tours.", "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg", "Teatro Colón", "+541143787100");
+for (let place of cars) {
+    document.getElementById("info").innerHTML += place.displayInfo();
+}
