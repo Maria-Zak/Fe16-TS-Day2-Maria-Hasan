@@ -32,7 +32,7 @@ class Info extends Person {
     this.location = location;
   }
   displayInfo() {
-    return `and I get ${this.salary}€ every month, and I work in ${this.location}.`;
+    return ` and I get ${this.salary}€ every month, and I work in ${this.location}.`;
   }
 }
 

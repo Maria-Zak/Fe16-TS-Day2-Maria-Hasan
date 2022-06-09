@@ -22,7 +22,7 @@ class Info extends Person {
         this.location = location;
     }
     displayInfo() {
-        return `and I get ${this.salary}€ every month, and I work in ${this.location}.`;
+        return ` and I get ${this.salary}€ every month, and I work in ${this.location}.`;
     }
 }
 let person1 = new Info("Hasan", 27, "engineer", 3600, "Vienna");
